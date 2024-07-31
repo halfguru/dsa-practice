@@ -13,30 +13,39 @@
 
 using namespace std;
 
-class Solution {
+
+// Time complexity: O(n)
+// Space complexity: O(n)
+class Solution
+{
 public:
-  bool isValid(string s) {
-    std::stack<char> myStack;
+	bool isValid(string s)
+	{
+		std::stack<char> myStack;
 
-    for (int i = 0; i < s.length(); ++i) {
-      if (s[i] == '(') {
-        myStack.push(')');
-      } else if (s[i] == '{') {
-        myStack.push('}');
-      } else if (s[i] == '[') {
-        myStack.push(']');
-      } else if ((s[i] == ')') || (s[i] == '}') || (s[i] == ']')) {
-        if (myStack.empty() || myStack.top() != s[i]) {
-          return false;
-        }
-        myStack.pop();
-      }
-    }
+		for (int i = 0; i < s.length(); ++i)
+		{
+			if (s[i] == '{')
+			{
+				myStack.push('}');
+			}
+			else if (s[i] == '[')
+			{
+				myStack.push(']');
+			}
+			else if (s[i] == '(')
+			{
+				myStack.push(')');
+			}
+			else if (s[i] == '}' || s[i] == ']' || s[i] == ')')
+			{
+				if (myStack.empty() || myStack.top() != s[i])
+				{
+					return false;
+				}
+			}
+		}
 
-    if (myStack.empty()) {
-      return true;
-    }
-
-    return false;
-  }
+		return myStack.empty();
+	}
 };

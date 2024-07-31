@@ -10,21 +10,29 @@
 
 using namespace std;
 
-class Solution {
-  public:
-    vector<int> twoSum(vector<int> &nums, int target) {
-      std::unordered_map<int, int> mapping;
-      const size_t numSize = nums.size();
-      for (size_t i = 0; i < numSize; ++i) {
-        mapping[nums[i]] = i;
-      }
+// Time complexity: O(n)
+// Space complexity: O(n)
 
-      for (int i = 0; i < numSize; i++) {
-        const int complement = target - nums[i];
-        if (mapping.count(complement) && mapping.at(complement) != i) {
-          return {mapping.at(complement), i};
-        }
-      }
-      return {};
-    }
+class Solution
+{
+public:
+	vector<int> twoSum(vector<int>& nums, int target)
+	{
+		std::unordered_map<int, int> mapping;
+		const size_t numSize = nums.size();
+		for (size_t i = 0; i < numSize; ++i)
+		{
+			mapping[nums[i]] = i;
+		}
+
+		for (int i = 0; i < numSize; i++)
+		{
+			const int complement = target - nums[i];
+			if (mapping.count(complement) && mapping.at(complement) != i)
+			{
+				return {mapping.at(complement), i};
+			}
+		}
+		return {};
+	}
 };

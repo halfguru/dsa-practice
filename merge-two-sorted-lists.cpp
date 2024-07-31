@@ -6,12 +6,13 @@
  */
 
 // Definition for singly-linked list.
-struct ListNode {
-  int val;
-  ListNode *next;
-  ListNode() : val(0), next(nullptr) {}
-  ListNode(int x) : val(x), next(nullptr) {}
-  ListNode(int x, ListNode *next) : val(x), next(next) {}
+struct ListNode
+{
+	int val;
+	ListNode* next;
+	ListNode(): val(0), next(nullptr) {}
+	ListNode(int x): val(x), next(nullptr) {}
+	ListNode(int x, ListNode* next): val(x), next(next) {}
 };
 
 // Solution is to create a dummy node and iterate with two pointers
@@ -19,29 +20,37 @@ struct ListNode {
 // nodes in list2. This is because we traverse each node once.
 // Space complexity: O(1) nothing created except pointers which are constant in
 // size
-class Solution {
+class Solution
+{
 public:
-  ListNode *mergeTwoLists(ListNode *list1, ListNode *list2) {
-    ListNode dummy(0);
-    ListNode *tail = &dummy;
+	ListNode* mergeTwoLists(ListNode* list1, ListNode* list2)
+	{
+		ListNode dummy;
+		ListNode* tail = &dummy;
 
-    while (list1 != nullptr && list2 != nullptr) {
-      if (list1->val < list2->val) {
-        tail->next = list1;
-        list1 = list1->next;
-      } else {
-        tail->next = list2;
-        list2 = list2->next;
-      }
-      tail = tail->next;
-    }
+		while (list1 != nullptr || list2 != nullptr)
+		{
+			if (list1->val < list2->val)
+			{
+				tail->next = list1;
+				list1 = list1->next;
+			}
+			else
+			{
+				tail->next = list2;
+				list2 = list2->next;
+			}
+			tail = tail->next;
+		}
+		if (list1 != nullptr)
+		{
+			tail->next = list1;
+		}
+		else
+		{
+			tail->next = list2;
+		}
 
-    if (list1 != nullptr) {
-      tail->next = list1;
-    } else {
-      tail->next = list2;
-    }
-
-    return dummy.next;
-  }
+		return dummy.next;
+	}
 };

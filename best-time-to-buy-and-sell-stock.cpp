@@ -5,30 +5,34 @@
  * cannot achieve any profit, return 0.
  */
 #include <algorithm>
+#include <vector>
 
 using namespace std;
 
 /* Time complexity: O(n)
  * Spac complexity: O(1)
  */
-class Solution {
+class Solution
+{
 public:
-  int maxProfit(vector<int> &prices) {
-    if (prices.empty()) {
-      prices[0];
-    }
+	int maxProfit(vector<int>& prices)
+	{
+		if (prices.empty())
+		{
+			return -1;
+		}
 
-    int minPrice = prices[0];
-    int maxProfit = 0;
+		int minPrice = prices[0];
+		int maxProfit = 0;
 
-    for (size_t i = 1; i < prices.size(); i++) {
-      const int currentPrice = prices[i];
-      const int currentProfit = currentPrice - minPrice;
+		for (int i = 1; i < prices.size(); ++i)
+		{
+			const int currentPrice = prices[i];
+			const int currentProfit = currentPrice - minPrice;
+			minPrice = std::min(minPrice, currentPrice);
+			maxProfit = std::max(maxProfit, currentProfit);
+		}
 
-      maxProfit = std::max(maxProfit, currentProfit);
-      minPrice = std::min(minPrice, currentPrice);
-    }
-
-    return maxProfit;
-  }
+		return maxProfit;
+	}
 };
