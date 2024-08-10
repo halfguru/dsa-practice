@@ -12,6 +12,11 @@ using namespace std;
 
 // Time complexity: O(n)
 // Space complexity: O(n)
+class Solution
+{
+public:
+	vector<int> twoSum(vector<int>& nums, int target) {}
+};
 
 class Solution
 {

@@ -10,7 +10,7 @@
 using namespace std;
 
 /* Time complexity: O(n)
- * Spac complexity: O(1)
+ * Space complexity: O(1)
  */
 class Solution
 {

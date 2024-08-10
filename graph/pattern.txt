@@ -1,0 +1,36 @@
+If given a graph then
+- DFS
+- BFS
+
+
+DFS:
+- DFS explores a branch of the graph as far as possible until it either reaches a dead end (no unvisited adjacent vertices) or finds the target, and then it backtracks.
+- DFS explores graph by branch.
+
+- Uses stack in recursive implementation to keep track of nodes
+- LIFO
+- Useful for topological sorting, detecting cycles and connected components
+
+1) Start at nodes
+2) explore neighbors (adjacent node)
+3) recursive call to adjacent nodes
+4) mark as visited
+5) backtrack if there are no more unvisited neighbors
+
+BFS:
+Explores all neighbors of a vertex before moving to the next level. Used for shortest path in unweighted graphs.
+BFS explores tree level by level.
+
+- queue
+- FIFO
+
+
+Undirected graph:
+- edges have no directions (bidirectional)
+- Cyle detection: Use DFS with parent pointer or union-find
+
+Directed graph:
+- edges have directions
+- Cycle detection: Use DFS to track the recursion stack or check for back edges
+
+

@@ -1,0 +1,27 @@
+Linked list
+Good:
+1) dynamic size
+2) efficient memory allocation
+3) O(1) insertion and deletion
+4) no preallocation of memory
+
+Bad:
+1) no random access. O(n) 
+2) poor cache performance compared to arrays due to non-contiguous memory
+
+example of use cases:
+1) memory management
+2) maintain sequence of elements
+3) efficient splitting and merging of lists
+
+1. Fast and slow pointers
+The Fast & Slow pointer approach, also known as the Hare & Tortoise algorithm, is a pointer algorithm that uses two pointers which move through the array (or sequence/Linked List) at different speeds. This approach is quite useful when dealing with cyclic Linked Lists or arrays.
+
+By moving at different speeds (say, in a cyclic Linked List), the algorithm proves that the two pointers are bound to meet. The fast pointer should catch the slow pointer once both the pointers are in a cyclic loop.
+
+2. In-place reversal of Linked List
+Use previous, current and next pointers trick
+
+3. Dummy node
+Helper node to simplify edge cases, during insertion and deletion
+useful to handle cases where we modify data on the head or tail of the list

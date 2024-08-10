@@ -44,6 +44,7 @@ public:
 					return false;
 				}
 			}
+			myStack.pop();
 		}
 
 		return myStack.empty();
