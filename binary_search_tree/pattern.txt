@@ -1,0 +1,6 @@
+BST is a binary tree in which node has at most 2 children
+All nodes in left subtree of a node are smaller than the node value
+All nodes in right subtree of a node are greater than the node value
+
+
+

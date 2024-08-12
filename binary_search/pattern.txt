@@ -1,0 +1,5 @@
+Algorithm to find element position in a sorted array by dividing search interval in half
+Complexity is O(log n) making it faster than linear search
+
+Mid calculation is mid = left + (right - mid) / 2 to avoid overflow issue
+ 
