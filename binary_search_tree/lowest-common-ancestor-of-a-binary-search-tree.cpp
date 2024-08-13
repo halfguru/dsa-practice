@@ -24,7 +24,7 @@ public:
 		const int large = std::max(p->val, q->val);
 		const int small = std::min(p->val, q->val);
 
-		while (root != nullptr)
+		while (root)
 		{
 			if (root->val > large)
 			{

@@ -16,7 +16,7 @@ struct TreeNode
 };
 
 // Time complexity: O(n) with n being number of nodes because of DFS
-// Space complexity: O(n) number of nodes in tree depending on depth of recursion stack
+// Space complexity: O(h) height of tree because of recursion stack
 class Solution
 {
 public:

@@ -1,0 +1,26 @@
+A tree whose elements have at most 2 children
+
+When doing recursion, the space complexity is the height of the tree
+
+Balanced Binary tree
+- Height of tree is O(logn) where n is number of nodes
+- Height of left and right subtree does not differ by more than 1
+- Left and Right subtrees are also balanced
+
+Level Order 
+- left, right
+- O(n) and O(w) width of tree
+- BFS search order
+
+Pre-Order
+- current, left, right
+- O(n) and O(h)
+- DFS search order
+- used for prefix expression trees and for tree serialization/deserialization
+
+Inorder
+- left, current, right
+- O(n) and O(h)
+- used for BST for ascending order
+
+
