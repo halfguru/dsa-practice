@@ -1,3 +1,8 @@
 If input array is sorted then
 - Binary search
 - Two pointers
+
+Backtracking
+Incrementally build candidates to the solutions and abandon candidates backtracks as soon as it determines the candidate cannot be completed to a reasonable solution.
+- no repetition and completion
+- search pruning: 

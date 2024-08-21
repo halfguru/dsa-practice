@@ -1,0 +1,15 @@
+Stack is a linear data structure that follows the Last In First Out (LIFO) principle.
+
+The two primary operations in a stack are:
+- Push: Add an element to the top of the stack.
+- Pop: Remove the element from the top of the stack.
+
+Function Call Management:
+- Stacks are used to manage function calls and recursive calls in programming languages.
+
+Depth-First Search (DFS):
+- In graph traversal, stacks are used to manage the nodes that need to be explored.
+
+Time and Space Complexity
+Push/Pop Operations: Both are O(1) since elements are added or removed from the top.
+Space Complexity: Typically O(n) where n is the number of elements, but specific problems may optimize this based on the approach (e.g., using a single stack vs. multiple stacks).
