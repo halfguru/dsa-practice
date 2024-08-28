@@ -1,0 +1,21 @@
+Heap
+Complete binary tree that satisfies the heap property
+- max heap property: given node is always greater than its child node and the key of the root node is the largest among all other nodes. 
+- min heap property: given node is always smaller than the child node and the key of the root node is the smallest among all other nodes
+
+operations:
+- insert: O(logn)
+- delete: O(logn)
+- peek/top: O(1)
+
+priority queue:
+Heaps are implemented often as priority queues where elements are dequeued based on their priority (smallest or largest)
+
+Typical problems and patterns:
+- findind kth largest/smallest elements. Use a min-heap of size K for finding Kth largest. push elements into the heap and once it exceeds size K, pop the smallest element
+- merge K sorted list/arrays. Use min-heap to merge multiple sorted lists/arrays
+- push first element of each list in heap. Iteratively pop smallest element, push next element from corresponding list and continue until all elements are merged.
+
+std::priority_queue is max heap, largest element is always at the top (first element to be accessed). Internally, elements aren't ordered. 
+pop() remove the top element which is the largest
+

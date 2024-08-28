@@ -1,0 +1,23 @@
+A Trie is a tree-like data structure used primarily for storing strings in a way that facilitates fast search, insertion, and deletion operations. Each node in a Trie represents a single character of a string, and the paths from the root to the leaves represent different strings.
+
+Topological Sorting is the linear ordering of vertices in a directed acyclic graph (DAG) such that for every directed edge u -> v, vertex u comes before v in the ordering. It’s primarily used in scenarios involving dependencies, like task scheduling or resolving symbol dependencies in compilers.
+
+Insertion
+Time Complexity: O(m)
+Here, m is the length of the word being inserted.
+Insertion involves traversing m levels of the Trie, which is directly proportional to the length of the word.
+
+2. Search
+Time Complexity: O(m)
+Here, m is the length of the word being searched.
+Similar to insertion, searching involves traversing m levels in the Trie.
+
+3. Starts With (Prefix Search)
+Time Complexity: O(m)
+Here, m is the length of the prefix.
+The operation checks whether the given prefix exists in the Trie by traversing m levels.
+
+4. Space Complexity
+Space Complexity: O(N * M * A)
+Here, N is the number of words in the Trie, M is the average length of the words, and A is the size of the alphabet (typically 26 for lowercase English letters).
+Each node can have up to A children, so the space complexity depends on the total number of nodes created, which is proportional to the sum of the lengths of all inserted words.

@@ -1,0 +1,15 @@
+Overlapping Subproblems:
+
+A problem has overlapping subproblems if the same subproblems are solved multiple times.
+For example, in the Fibonacci sequence, fib(n) is computed from fib(n-1) and fib(n-2), which are computed multiple times in a naive recursive approach.
+
+
+Memoization (Top-Down Approach):
+Store the results of subproblems in a table (or dictionary) to avoid redundant calculations.
+Typically implemented using recursion with a cache.
+
+Tabulation (Bottom-Up Approach):
+Solve subproblems in a specific order and store their results in a table to build up the solution to the problem.
+Typically implemented using iterative loops.
+
+Optimize space usage by reducing the size of the DP table when possible.

@@ -37,34 +37,33 @@ public:
 				{
 					numIslands++;
 					q.push({i, j});
-				}
 
-				while (!q.empty())
-				{
-					const auto [x, y] = q.front();
-					q.pop();
-
-					if (x < 0 || x >= m || y < 0 || y >= n || grid[x][y] != '1')
+					while (!q.empty())
 					{
-						continue;
-					}
+						const auto [x, y] = q.front();
+						q.pop();
 
-					// mark as visited
-					grid[x][y] = '0';
-
-					for (const auto& dir: directions)
-					{
-						const int nx = x + dir.first;
-						const int ny = y + dir.second;
-						if (nx >= 0 && ny >= 0 && nx < m && ny < n && grid[x][y] == '1')
+						if (x < 0 || x >= m || y < 0 || y >= n || grid[x][y] != '1')
 						{
-							q.push({nx, ny});
+							continue;
+						}
+
+						// mark as visited
+						grid[x][y] = '0';
+
+						for (const auto& dir: directions)
+						{
+							const int nx = x + dir.first;
+							const int ny = y + dir.second;
+							if (nx >= 0 && ny >= 0 && nx < m && ny < n && grid[nx][ny] == '1')
+							{
+								q.push({nx, ny});
+							}
 						}
 					}
 				}
 			}
 		}
-
 		return numIslands;
 	}
 };

@@ -1,0 +1,5 @@
+Backtracking
+Build solution incrementally by making choices, exploring those choices and undoing them when they don't lead to valid solution.
+
+Difference with DFS:
+- DFS traverse a tree/graph, visiting nodes and paths.
