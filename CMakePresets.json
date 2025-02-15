@@ -1,0 +1,61 @@
+{
+    "version": 3,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 29,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "conf-common",
+            "description": "General settings that apply to all configurations",
+            "hidden": true,
+            "generator": "Ninja",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "installDir": "${sourceDir}/install/${presetName}"
+        },
+        {
+            "name": "conf-windows-common",
+            "description": "Windows settings for MSBuild toolchain that apply to msvc and clang",
+            "hidden": true,
+            "inherits": "conf-common",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            },
+            "architecture": {
+                "value": "x64",
+                "strategy": "external"
+            },
+            "toolset": {
+                "value": "host=x64",
+                "strategy": "external"
+            },
+            "cacheVariables": {
+                "ENABLE_CPPCHECK_DEFAULT": "FALSE",
+                "ENABLE_CLANG_TIDY_DEFAULT": "FALSE"
+            }
+        },
+        {
+            "name": "msvc",
+            "inherits": "conf-windows-common",
+            "hidden": false,
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "cmake/Windows.MSVC.toolchain.cmake"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "msvc-debug",
+            "configurePreset": "msvc",
+            "configuration": "Debug"
+        },
+        {
+            "name": "msvc-release",
+            "configurePreset": "msvc",
+            "configuration": "Release"
+        }
+    ]
+}
